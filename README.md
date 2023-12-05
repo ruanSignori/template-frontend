@@ -1,36 +1,80 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Pacotes, e FrameWorks utilizados
 
-## Getting Started
+- Next
+- TypeScript
+- TailwindCss
+- Jest
+- Eslint
 
-First, run the development server:
+## Instalar dependências
+
+```bash
+ yarn
+ #ou
+ npm i
+```
+
+## Iniciar o projeto
+
+Execute um dos seguintes comandos, conforme o gerenciador de pacotes utilizado.
 
 ```bash
 npm run dev
-# or
+# ou
 yarn dev
-# or
+# ou
 pnpm dev
-# or
+# ou
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Acesse [http://localhost:3000](http://localhost:3000) para ver o site em funcionamento.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Estrutura de pastas
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+```
+├─ public/ # Recursos estáticos públicos (imagens, arquivos, etc.)
+│  └─ images/ # Imagens utilizadas no projeto
+├─ src/ # Irá conter todo o código fonte do projeto
+|  └─ @types/ # Definição de tipos TypeScript para bibliotecas
+|  └─ app/
+|  └─ components/ # Armazenar componentes React reutilizáveis
+|  └─ functions/ # Funcionalidades específicas do projeto que podem ou não, ser reutilizáveis
+|  └─ hooks/ # React Hooks personalizados
+|  └─ lib/ # Funções e manipulação de chamada para API's
+|  └─ styles/ # Definições de classes com Tailwind
+|  └─ test/ # Testes de scripts
+│  │  └─ integration / # Testes de integração (chamada e consumo de api)
+|  |  └─ unitary / # Testes unitários (botões, operações matemáticas, algoritmos)
+|  └─ types/ # Adicionar tipo à variáveis
+├─ .env.example # Variáveis de ambiente (crie um arquivo .env para salvar os seus valores)
+├─ next.config.js # Configurações específicas do Next.js
+├─ package.json # Arquivo de configuração do npm
+├─ README.md # Este arquivo
+├─ tailwind.config.js # Configurações específicas do Tailwindcss
+├─ tsconfig.json # Configurações ambiente do TypeScript
+```
 
-## Learn More
+## Estrutura de arquivos
 
-To learn more about Next.js, take a look at the following resources:
+```
+├─ types
+|  └─ index.ts
+|  └─ example-user.ts
+|  └─ other-example-user.ts
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```typescript
+// example-user.ts
+export interface ExampleModel {
+  name: string;
+  age: number;
+}
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+```typescript
+// index.ts
+export { ExampleModel } from "./example-user";
+```
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Deixar o `index.ts` fazer a exportação para evitar que o código de importação fique muito verboso.
