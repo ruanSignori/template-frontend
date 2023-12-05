@@ -15,6 +15,7 @@
 
 # lock
 *.lock
+package-lock.json
 
 # production
 /build

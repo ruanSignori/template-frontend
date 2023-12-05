@@ -21,7 +21,7 @@ Execute um dos seguintes comandos, conforme o gerenciador de pacotes utilizado.
 ```bash
 npm run dev
 # ou
-yarn dev
+yarn run dev
 # ou
 pnpm dev
 # ou
@@ -37,7 +37,7 @@ Acesse [http://localhost:3000](http://localhost:3000) para ver o site em funcion
 │  └─ images/ # Imagens utilizadas no projeto
 ├─ src/ # Irá conter todo o código fonte do projeto
 |  └─ @types/ # Definição de tipos TypeScript para bibliotecas
-|  └─ app/
+|  └─ app/ # Rotas
 |  └─ components/ # Armazenar componentes React reutilizáveis
 |  └─ functions/ # Funcionalidades específicas do projeto que podem ou não, ser reutilizáveis
 |  └─ hooks/ # React Hooks personalizados
@@ -78,3 +78,6 @@ export { ExampleModel } from "./example-user";
 ```
 
 Deixar o `index.ts` fazer a exportação para evitar que o código de importação fique muito verboso.
+
+## Utilidades
+[Como construir páginas na pasta App](https://www.youtube.com/watch?v=hlZ_qZvL3e8&ab_channel=GusQuemFala)
